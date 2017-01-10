@@ -6,7 +6,9 @@ class SkillSearch extends React.Component {
 
   render() {
     return (
-      <h1>hello world from skill search</h1>
+      <button type="button" className="btn btn-default btn-lg">
+        <span className="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+      </button>
     );
   }
 

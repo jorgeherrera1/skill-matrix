@@ -3,36 +3,42 @@ const webpack = require('webpack');
 
 const config = {
   devtool: 'source-map',
-  context: path.resolve(__dirname, './app'),
+  context: path.resolve(__dirname, 'app'),
   entry: {
-    app: './app.js'
+    app: ['./index.html', './app.js']
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     publicPath: '/assets'
   },
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: [
+          'file-loader?name=[name].[ext]',
+          'extract-loader',
+          'html-loader?minimize=true'
+        ]
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader'
-        ]
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
           'style-loader',
-          'css-loader',
-          'sass-loader'
+          'css-loader?sourceMap',
+          'sass-loader?sourceMap'
         ]
       },
       {
         test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-        loader: 'file-loader?name=[name].[ext]&outputPath=fonts'
+        loader: 'file-loader?name=./fonts/[name].[ext]'
       }
     ]
   },
@@ -40,7 +46,7 @@ const config = {
     new webpack.optimize.UglifyJsPlugin()
   ],
   devServer: {
-    contentBase: path.join(__dirname, './app'),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   }
