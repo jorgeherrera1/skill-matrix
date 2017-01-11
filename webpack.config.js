@@ -5,7 +5,7 @@ const config = {
   devtool: 'source-map',
   context: path.resolve(__dirname, 'app'),
   entry: {
-    app: ['./index.html', './app.js']
+    app: './app.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -34,8 +34,9 @@ const config = {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
-          'css-loader?sourceMap',
+          'file-loader?name=app.bundle.css',
+          'extract-loader',
+          'css-loader?minimize&sourceMap',
           'sass-loader?sourceMap'
         ]
       },
