@@ -48,7 +48,6 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "express": "^4.14.0",
-    "graphlib": "^2.1.1",
     "morgan": "^1.7.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
