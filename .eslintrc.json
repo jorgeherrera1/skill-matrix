@@ -8,6 +8,9 @@
       "jsx": true
     }
   },
+  "rules": {
+    "comma-dangle": ["error", "never"]
+  },
   "env": {
     "browser": true,
     "jest": true
