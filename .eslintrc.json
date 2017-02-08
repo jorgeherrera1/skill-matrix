@@ -9,7 +9,9 @@
     }
   },
   "rules": {
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "require-jsdoc": "off",
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}]
   },
   "env": {
     "browser": true,
