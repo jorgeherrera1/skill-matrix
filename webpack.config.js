@@ -20,13 +20,18 @@ const config = {
       {
         test: /\.html$/,
         loaders: ['html-loader']
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [new HtmlWebpackPlugin({
     template: './index.html'
   })],
-  devtool: 'cheap-module-eval-source-map',
+  //devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
