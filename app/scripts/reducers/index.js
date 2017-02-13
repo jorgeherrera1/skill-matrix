@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import skills from './skills';
+import allSkills from './all-skills';
 
-const reducers = combineReducers({skills});
+const reducers = combineReducers({allSkills});
 
 export default reducers;

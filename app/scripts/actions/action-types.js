@@ -1,1 +1,1 @@
-export const SEARCH_SKILL = 'SEARCH_SKILL';
+export const ADD_SKILL = 'ADD_SKILL';

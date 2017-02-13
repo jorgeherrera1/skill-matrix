@@ -1,8 +1,8 @@
-import {SEARCH_SKILL} from './action-types';
+import {ADD_SKILL} from './action-types';
 
-export const searchSkill = (skill) => {
+export const addSkill = (name, skill, level) => {
   return {
-    type: SEARCH_SKILL,
-    payload: {skill}
+    type: ADD_SKILL,
+    payload: {name, skill, level}
   };
 };
