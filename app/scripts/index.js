@@ -6,10 +6,7 @@ import {applyMiddleware, createStore} from 'redux';
 import createLogger from 'redux-logger';
 import reducers from './reducers';
 import Root from './containers/root';
-
-let initialState = {
-  allSkills: ['Java', 'JavaScript']
-};
+import initialState from './test-data';
 
 const logger = createLogger();
 const middleware = applyMiddleware(logger);

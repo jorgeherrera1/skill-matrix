@@ -26,7 +26,7 @@ SkillList.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    skills: state.allSkills
+    skills: state.allSkills.toArray()
   };
 };
 

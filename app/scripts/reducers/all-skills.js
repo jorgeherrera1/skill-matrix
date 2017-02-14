@@ -1,16 +1,15 @@
 import {ADD_SKILL} from '../actions/action-types';
+import {Set} from 'immutable';
 
-const allSkills = (state = [], action) => {
+const allSkills = (state = Set(), action) => {
   const {type, payload} = action;
 
   let nextState;
 
   switch (type) {
     case ADD_SKILL:
-      if (!state.find((skill) => skill === payload.skill)) {
-        nextState = [...state, payload.skill];
-        break;
-      }
+      nextState = state.add(payload.skill);
+      break;
 
     default:
       nextState = state;
