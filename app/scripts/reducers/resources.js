@@ -1,5 +1,5 @@
 import {ADD_SKILL} from '../actions/action-types';
-import {List} from 'immutable';
+import {List, Map} from 'immutable';
 
 const resources = (state = List(), action) => {
   const {type, payload} = action;
@@ -13,7 +13,7 @@ const resources = (state = List(), action) => {
       });
 
       if (resourceIndex === -1) {
-        nextState = state.push(payload);
+        nextState = state.push(Map(payload));
       } else {
         nextState = state.update(resourceIndex, (resource) => {
           if (resource.get('level') === payload.level) {
