@@ -13,7 +13,7 @@ class AddSkill extends Component {
 
   saveSkill(e) {
     e.preventDefault();
-    this.props.dispatch(addSkill(this.skill.name, this.skill.value, this.skill.level));
+    this.props.dispatch(addSkill(this.name.value, this.skill.value, this.level.value));
   }
 
   render() {

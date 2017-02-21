@@ -17,7 +17,7 @@
       "tabWidth": 2
     }],
     "new-cap": ["error", {
-      "capIsNewExceptions" : ["Set", "List"]
+      "capIsNewExceptions" : ["Set", "List", "Map"]
     }]
   },
   "env": {

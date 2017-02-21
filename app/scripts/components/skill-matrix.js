@@ -1,15 +1,34 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
 class SkillMatrix extends Component {
+
+  renderResources() {
+    return this.props.resources.map((resource, idx) => (
+      <li key={idx}>{resource.name},{resource.skill},{resource.level}</li>
+    ));
+  }
 
   render() {
     return (
       <div>
         <h2>Skill Matrix</h2>
+        <ul>
+          {this.renderResources()}
+        </ul>
       </div>
     );
   }
 }
 
-export default connect()(SkillMatrix);
+SkillMatrix.propTypes = {
+  resources: PropTypes.array.isRequired
+};
+
+const mapStateToProps = (state) => {
+  return {
+    resources: state.resources.toJS()
+  };
+};
+
+export default connect(mapStateToProps)(SkillMatrix);
