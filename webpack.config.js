@@ -25,6 +25,10 @@ const config = {
         test: /\.scss$/,
         exclude: /node_modules/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+        loader: 'file-loader?name=./fonts/[name].[ext]'
       }
     ]
   },
