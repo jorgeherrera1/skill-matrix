@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   context: path.resolve(__dirname, 'app'),
@@ -27,7 +27,7 @@ const config = {
         exclude: /node_modules/,
         loaders: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: ['css-loader?minimize=true', 'sass-loader']
         })
       },
       {
@@ -38,7 +38,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({template: './index.html'}),
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin('[contenthash].css')
   ],
   //devtool: 'cheap-module-eval-source-map',
   devServer: {

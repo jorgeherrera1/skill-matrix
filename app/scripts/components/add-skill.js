@@ -33,7 +33,7 @@ class AddSkill extends Component {
             Level:
             <input type="text" ref={(node) => {this.level = node;}} />
           </label>
-          <input type="submit" value="Submit" />
+          <input className="btn btn-default" type="submit" value="Submit" />
         </form>
       </div>
     );
