@@ -8,7 +8,7 @@ const config = {
     app: './scripts/index.js'
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[hash].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
