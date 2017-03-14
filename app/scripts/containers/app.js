@@ -1,13 +1,9 @@
 import React from 'react';
-import AddSkill from '../components/add-skill';
-import SkillList from '../components/skill-list';
-import SkillMatrix from '../components/skill-matrix';
+import SkillDetails from '../components/skill-details';
 
 const App = () => (
   <div>
-    <AddSkill />
-    <SkillList />
-    <SkillMatrix />
+    <SkillDetails skill="Spring Boot" />
   </div>
 );
 

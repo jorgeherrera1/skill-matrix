@@ -5,16 +5,19 @@ class SkillList extends Component {
 
   render() {
     const skills = this.props.skills.map((skill) => (
-        <li key={skill}>{skill}</li>
+        <a key={skill} href="#" className="list-group-item">
+          {skill}
+          <span className="badge">5</span>
+        </a>
       )
     );
 
     return (
       <div>
         <h2>Skill List</h2>
-        <ul>
+        <div className="list-group">
           {skills}
-        </ul>
+        </div>
       </div>
     );
   }
