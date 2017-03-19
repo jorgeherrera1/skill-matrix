@@ -6,7 +6,7 @@ module.exports.listAllSkills = function() {
   const p = new Promise((resolve, reject) => {
     let allSkills = [];
     base('Skills').select(selectOpts).eachPage((records, fetchNextPage) => {
-      allSkills = allSkills.concat(records.map(record => record.get('Skill')));
+      allSkills = allSkills.concat(records.map(record => ({skill: record.get('Skill')})));
 
       fetchNextPage();
     }, (err) => {
