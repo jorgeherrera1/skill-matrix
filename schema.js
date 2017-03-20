@@ -11,14 +11,25 @@ const skillType = new graphql.GraphQLObjectType({
   }
 });
 
+const personType = new graphql.GraphQLObjectType({
+  name: 'Person',
+  fields: {
+    name: {
+      type: graphql.GraphQLString
+    }
+  }
+});
+
 const queryType = new graphql.GraphQLObjectType({
   name: 'Query',
   fields: {
     skills: {
       type: new graphql.GraphQLList(skillType),
-      resolve: () => {
-        return skillsApi.listAllSkills()
-      }
+      resolve: () => skillsApi.listAllSkills()
+    },
+    people: {
+      type: new graphql.GraphQLList(personType),
+      resolve: () => skillsApi.listAllPeople()
     }
   }
 });
