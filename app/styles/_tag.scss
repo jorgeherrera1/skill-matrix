@@ -1,0 +1,23 @@
+.tag {
+  font-size: 1em;
+  font-weight: normal;
+  padding: .3em .4em .4em;
+  margin: 0 .1em;
+  background-color: #000;
+
+  .remove {
+    color: #bbb;
+    cursor: pointer;
+    opacity: 0.6;
+    margin: 0 0 0 .3em;
+
+    .glyphicon-white {
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    &:hover {
+      opacity: 1.0
+    }
+  }
+}
