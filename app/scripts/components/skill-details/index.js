@@ -7,7 +7,7 @@ class SkillDetails extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <SkillInfo skill={this.props.skill} />
