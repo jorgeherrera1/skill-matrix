@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Header = () => (
   <nav className="navbar navbar-default navbar-fixed-top">
@@ -15,8 +16,8 @@ const Header = () => (
       </div>
       <div id="skill-matrix-nav" className="collapse navbar-collapse">
         <ul className="nav navbar-nav">
-          <li className="active"><a href="#">Resources</a></li>
-          <li><a href="#">Skills</a></li>
+          <li><Link to="/resources">Resources</Link></li>
+          <li><Link to="/skills">Skills</Link></li>
         </ul>
       </div>
     </div>
