@@ -4,11 +4,15 @@ import {Provider} from 'react-redux';
 import {ConnectedRouter} from 'react-router-redux';
 import {Route} from 'react-router-dom';
 import App from './app';
+import Skills from './skills';
 
 const Root = ({history, store}) => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route exact path="/" component={App}/>
+      <div>
+        <Route exact path="/" component={App}/>
+        <Route path="/skills" component={Skills}/>
+      </div>
     </ConnectedRouter>
   </Provider>
 );
