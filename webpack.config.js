@@ -36,20 +36,12 @@ const config = {
         loader: 'babel-loader'
       },
       {
-        test: /\.html$/,
-        loader: 'html-loader'
-      },
-      {
         test: /\.scss$/,
         exclude: /node_modules/,
         loaders: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader?minimize=true', 'sass-loader']
         })
-      },
-      {
-        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-        loader: 'file-loader?name=./fonts/[name].[ext]'
       }
     ]
   },
