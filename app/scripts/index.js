@@ -1,18 +1,20 @@
-import '../styles/main.scss';
-
 import React from 'react';
 import {render} from 'react-dom';
-import {applyMiddleware, createStore} from 'redux';
+import createHistory from 'history/createBrowserHistory';
+import {createStore, applyMiddleware} from 'redux';
+import {routerMiddleware} from 'react-router-redux';
 import logger from 'redux-logger';
 import reducers from './reducers';
 import Root from './containers/root';
-import initialState from './test-data';
+import '../styles/main.scss';
 
-const middleware = applyMiddleware(logger);
-
-const store = createStore(reducers, initialState, middleware);
+const history = createHistory();
+const store = createStore(
+  reducers,
+  applyMiddleware(logger, routerMiddleware(history))
+);
 
 render(
-  <Root store={store} />,
+  <Root history={history} store={store} />,
   document.getElementById('skill-matrix-app')
 );

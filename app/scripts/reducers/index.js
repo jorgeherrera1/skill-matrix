@@ -1,7 +1,10 @@
 import {combineReducers} from 'redux';
-import resources from './resources';
-import allSkills from './all-skills';
+import {routerReducer} from 'react-router-redux';
+import skills from './skills';
 
-const reducers = combineReducers({resources, allSkills});
+const reducers = combineReducers({
+  skills,
+  router: routerReducer
+});
 
 export default reducers;

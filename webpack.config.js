@@ -12,7 +12,9 @@ const config = {
       'react-dom',
       'prop-types',
       'react-router-dom',
+      'react-router-redux',
       'react-redux',
+      'history',
       'redux',
       'redux-logger',
       'immutable'
