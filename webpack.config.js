@@ -44,6 +44,10 @@ const config = {
           fallback: 'style-loader',
           use: ['css-loader?minimize=true', 'sass-loader']
         })
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
