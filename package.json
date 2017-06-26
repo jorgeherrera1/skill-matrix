@@ -37,10 +37,13 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "yarn": "^0.24.5"
   }
 }
