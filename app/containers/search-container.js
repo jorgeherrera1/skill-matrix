@@ -3,7 +3,7 @@ import Search from '../components/search/search';
 
 const SearchContainer = () => (
   <div>
-    <h3>Search</h3>
+    <h1>Search</h1>
     <Search />
   </div>
 );

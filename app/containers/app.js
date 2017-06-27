@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Route, Link as RouterLink} from 'react-router-dom';
+import {AppBar} from 'react-toolbox/lib/app_bar';
+import {Layout, NavDrawer, Panel} from 'react-toolbox/lib/layout';
 import routes from '../routes';
 
 const RouteWithSubRoutes = (route) => (
@@ -10,19 +12,45 @@ const RouteWithSubRoutes = (route) => (
 );
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navDrawerActive: false
+    };
+    this.toggleNavDrawerActive = this.toggleNavDrawerActive.bind(this);
+  }
+
+  toggleNavDrawerActive() {
+    console.log(this);
+    this.setState({
+      navDrawerActive: !this.state.navDrawerActive
+    });
+  }
+
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <ul>
-            <li><Link to="/">Search</Link></li>
-            <li><Link to="/skills">Skills</Link></li>
-          </ul>
-          <hr/>
-          {routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route}/>
-          ))}
-        </div>
+        <Layout>
+          <NavDrawer
+            active={this.state.navDrawerActive}
+            onOverlayClick={this.toggleNavDrawerActive}>
+            <ul>
+              <li><RouterLink to="/">Search</RouterLink></li>
+              <li><RouterLink to="/skills">Skills</RouterLink></li>
+            </ul>
+          </NavDrawer>
+          <Panel>
+            <AppBar
+              leftIcon='menu'
+              onLeftIconClick={this.toggleNavDrawerActive}>
+            </AppBar>
+          </Panel>
+          <div style={{paddingTop: '100px'}}>
+            {routes.map((route, i) => (
+              <RouteWithSubRoutes key={i} {...route}/>
+            ))}
+          </div>
+        </Layout>
       </BrowserRouter>
     );
   }
