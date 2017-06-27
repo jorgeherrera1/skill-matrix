@@ -44,12 +44,12 @@ class App extends Component {
               leftIcon='menu'
               onLeftIconClick={this.toggleNavDrawerActive}>
             </AppBar>
-          </Panel>
-          <div style={{paddingTop: '100px'}}>
-            {routes.map((route, i) => (
-              <RouteWithSubRoutes key={i} {...route}/>
-            ))}
+            <div>
+              {routes.map((route, i) => (
+                <RouteWithSubRoutes key={i} {...route}/>
+              ))}
           </div>
+          </Panel>
         </Layout>
       </BrowserRouter>
     );
