@@ -9,6 +9,8 @@ const config = {
       'react',
       'react-dom',
       'react-redux',
+      'react-router-dom',
+      'react-toolbox',
       'redux',
       'redux-logger'
     ],
@@ -40,7 +42,6 @@ const config = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         use: [
           {
             loader: 'style-loader'
@@ -49,6 +50,7 @@ const config = {
             loader: 'css-loader',
             options: {
               modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
               importLoaders: 1
             }
           },
