@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Link as RouterLink} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import {AppBar} from 'react-toolbox/lib/app_bar';
 import {Layout, NavDrawer, Panel} from 'react-toolbox/lib/layout';
+import Nav from '../components/nav/nav';
 import routes from '../routes';
 
 const RouteWithSubRoutes = (route) => (
   <Route path={route.path} exact render={(props) => (
     // pass the sub-routes down to keep nesting
     <route.component {...props} routes={route.routes}/>
-  )}/>
+  )} />
 );
 
 class App extends Component {
@@ -21,7 +22,6 @@ class App extends Component {
   }
 
   toggleNavDrawerActive() {
-    console.log(this);
     this.setState({
       navDrawerActive: !this.state.navDrawerActive
     });
@@ -34,10 +34,7 @@ class App extends Component {
           <NavDrawer
             active={this.state.navDrawerActive}
             onOverlayClick={this.toggleNavDrawerActive}>
-            <ul>
-              <li><RouterLink to="/">Search</RouterLink></li>
-              <li><RouterLink to="/skills">Skills</RouterLink></li>
-            </ul>
+            <Nav />
           </NavDrawer>
           <Panel>
             <AppBar
