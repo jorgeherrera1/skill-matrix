@@ -10,7 +10,6 @@ const config = {
       'react-dom',
       'react-redux',
       'react-router-dom',
-      'react-toolbox',
       'redux',
       'redux-logger'
     ],
@@ -41,7 +40,7 @@ const config = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           {
             loader: 'style-loader'
@@ -55,7 +54,7 @@ const config = {
             }
           },
           {
-            loader: 'postcss-loader'
+            loader: 'sass-loader'
           }
         ]
       }

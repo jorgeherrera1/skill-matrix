@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     'max-len': ['error', {'code': 100}],
     'require-jsdoc': 'off',
-    'comma-dangle': ['error', 'never']
+    'comma-dangle': ['error', 'never'],
+    'padded-blocks': ['error', {'classes': 'always'}]
   }
 };

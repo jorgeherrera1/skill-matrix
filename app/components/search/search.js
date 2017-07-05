@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import styles from './search.css';
-import {Input} from 'react-toolbox/lib/input';
+import styles from './search.scss';
 
 class Search extends Component {
+
   render() {
     return (
       <div className={styles.search}>
-        <Input type='text' label='Search' />
+        input
       </div>
     );
   }
+
 }
 
 export default Search;
