@@ -12,6 +12,7 @@ module.exports = {
     'max-len': ['error', {'code': 100}],
     'require-jsdoc': 'off',
     'comma-dangle': ['error', 'never'],
-    'padded-blocks': ['error', {'classes': 'always'}]
+    'padded-blocks': ['error', {'classes': 'always'}],
+    'linebreak-style': 'off'
   }
 };

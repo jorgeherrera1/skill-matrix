@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
+import Header from '../components/header/header';
 import Nav from '../components/nav/nav';
 import routes from '../routes';
 
@@ -15,13 +16,14 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <Header />
           <Nav />
-          <div>
+          <main className="mdl-layout__content">
             {routes.map((route, i) => (
               <RouteWithSubRoutes key={i} {...route}/>
             ))}
-          </div>
+          </main>
         </div>
       </BrowserRouter>
     );
