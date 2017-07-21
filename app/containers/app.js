@@ -1,15 +1,12 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
+import 'material-design-lite/src/mdlComponentHandler.js';
+import 'material-design-lite/src/layout/layout';
 import Header from '../components/header/header';
 import Nav from '../components/nav/nav';
-import routes from '../routes';
-
-const RouteWithSubRoutes = (route) => (
-  <Route path={route.path} exact render={(props) => (
-    // pass the sub-routes down to keep nesting
-    <route.component {...props} routes={route.routes}/>
-  )} />
-);
+import SkillsContainer from './skills-container';
+import PeopleContainer from './people-container';
+import PersonContainer from './person-container';
 
 class App extends Component {
 
@@ -20,9 +17,9 @@ class App extends Component {
           <Header />
           <Nav />
           <main className="mdl-layout__content">
-            {routes.map((route, i) => (
-              <RouteWithSubRoutes key={i} {...route}/>
-            ))}
+            <Route path="/skills" component={SkillsContainer} />
+            <Route path="/people" exact component={PeopleContainer} />
+            <Route path="/people/:person" component={PersonContainer} />
           </main>
         </div>
       </BrowserRouter>

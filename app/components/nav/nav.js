@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link as RouterLink} from 'react-router-dom';
+import NavLink from './nav-link';
 
 class Nav extends Component {
 
@@ -8,15 +8,10 @@ class Nav extends Component {
       <div className="mdl-layout__drawer">
         <span className="mdl-layout-title">Title</span>
         <nav className="mdl-navigation">
-          <a className="mdl-navigation__link" href="">Link</a>
-          <a className="mdl-navigation__link" href="">Link</a>
-          <a className="mdl-navigation__link" href="">Link</a>
-          <a className="mdl-navigation__link" href="">Link</a>
+          <NavLink to="/people" label="People" />
+          <NavLink to="/skills" label="Skills" />
+          <NavLink to="/people/jorge" label="Jorge's profile" />
         </nav>
-        <ul>
-          <li><RouterLink to="/">Search</RouterLink></li>
-          <li><RouterLink to="/skills">Skills</RouterLink></li>
-        </ul>
       </div>
     );
   }
