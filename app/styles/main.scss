@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import 'variables';
-@import '~material-design-lite/src/layout/_layout.scss';
+@import 'mdl-components';
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -10,7 +10,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $preferred_font;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
+  background-color: unquote("rgb(#{$color-primary-dark})");
+  color: unquote("rgb(#{$color-dark-contrast})");
 }
