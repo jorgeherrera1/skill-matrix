@@ -14,3 +14,7 @@ $color-accent-contrast: $color-dark-contrast;
 
 /** Typography */
 $preferred_font: 'Montserrat', sans-serif;
+$text-color-primary: unquote("rgb(#{$color-primary-contrast})");
+
+/** Chips */
+$chip-bg-color: unquote("rgb(#{$color-primary})");
