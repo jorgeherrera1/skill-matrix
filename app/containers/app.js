@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import 'material-design-lite/src/mdlComponentHandler.js';
-import 'material-design-lite/src/layout/layout';
 import Header from '../components/header/header';
 import Nav from '../components/nav/nav';
 import SkillsContainer from './skills-container';
