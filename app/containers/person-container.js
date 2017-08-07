@@ -1,8 +1,9 @@
 import React from 'react';
+import PersonProfile from '../components/person-profile/person-profile';
 
 const PersonContainer = () => (
   <div>
-    <h1>Person</h1>
+    <PersonProfile name="Jorge Herrera" />
     <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--4-col">
           <span className="mdl-chip">
