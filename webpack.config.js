@@ -5,14 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   context: path.resolve(__dirname, 'app'),
   entry: {
-    lib: [
-      'react',
-      'react-dom',
-      'react-redux',
-      'react-router-dom',
-      'redux',
-      'redux-logger'
-    ],
     app: './main.js'
   },
   output: {
@@ -62,7 +54,8 @@ const config = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'lib'
+      name: 'vendor',
+      minChunks: ({resource}) => /node_modules/.test(resource)
     }),
     new HtmlWebpackPlugin({
       template: './index.html'
