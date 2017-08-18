@@ -15,6 +15,7 @@ class App extends Component {
           <Header />
           <Nav />
           <main className="mdl-layout__content">
+            <Route path="/" exact component={PersonContainer} />
             <Route path="/skills" component={SkillsContainer} />
             <Route path="/people" exact component={PeopleContainer} />
             <Route path="/people/:person" component={PersonContainer} />

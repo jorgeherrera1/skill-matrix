@@ -3,7 +3,10 @@ import PersonProfile from '../components/person-profile/person-profile';
 
 const PersonContainer = () => (
   <div>
-    <PersonProfile name="Jorge Herrera" />
+    <PersonProfile
+      name="Jorge Herrera"
+      jobCode="Tech Lead"
+    />
     <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--4-col">
           <span className="mdl-chip">
