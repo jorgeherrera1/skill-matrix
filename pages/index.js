@@ -1,16 +1,10 @@
 import Link from 'next/link';
+import Page from '../layouts/main';
 
-const IndexPage = () => (
-  <div>
-    <header>
-      <h1>Skill Matrix</h1>
-    </header>
-    <main>
-      <Link href="/skill">
-        <a>Skill</a>
-      </Link>
-    </main>
-  </div>
+export default ({children}) => (
+  <Page>
+    <Link href="/skill">
+      <a>Skill</a>
+    </Link>
+  </Page>
 );
-
-export default IndexPage;
