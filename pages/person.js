@@ -1,14 +1,16 @@
 import Page from '../layouts/main';
+import Skill from '../components/skill';
 
 export default () => (
   <Page>
     <header>
-      <h1>JavaScript</h1>
+      <h1>Jorge Herrera</h1>
     </header>
     <main>
-      <div className="people-container">
+      <div className="skills-container">
         <div>
-          juniors
+          <Skill skill="Oracle Forms" />
+          <Skill skill="Amazon Web Services (AWS)" />
         </div>
         <div>
           intermediates
@@ -19,10 +21,11 @@ export default () => (
       </div>
     </main>
     <style jsx>{`
-      .people-container {
+      .skills-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 20px;
+        justify-items: start;
       }
     `}</style>
   </Page>
