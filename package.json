@@ -4,9 +4,9 @@
   "description": "Skill Matrix",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server",
-    "test": "jest",
-    "build": "webpack"
+    "start": "next start",
+    "build": "next build",
+    "dev": "next"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,10 @@
     "url": "https://github.com/jorgeherrera1/skill-matrix/issues"
   },
   "homepage": "https://github.com/jorgeherrera1/skill-matrix#readme",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "next": "^6.1.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }
