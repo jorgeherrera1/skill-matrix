@@ -4,9 +4,9 @@
   "description": "Skill Matrix",
   "private": true,
   "scripts": {
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "build": "next build",
-    "dev": "next"
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,10 +22,14 @@
     "url": "https://github.com/jorgeherrera1/skill-matrix/issues"
   },
   "homepage": "https://github.com/jorgeherrera1/skill-matrix#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "serverless": "^1.28.0"
+  },
   "dependencies": {
+    "express": "^4.16.3",
     "next": "^6.1.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "serverless-http": "^1.6.0"
   }
 }
