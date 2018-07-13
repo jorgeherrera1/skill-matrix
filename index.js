@@ -1,4 +1,10 @@
 const serverless = require('serverless-http');
-const app = require('./server');
+const {app, server} = require('./server');
 
-module.exports.handler = serverless(app);
+exports.handler = (event, context, callback) => {
+  app.prepare()
+    .then(() => {
+      const handler = serverless(server);
+      return handler(event, context, callback);
+    });
+};

@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const next = require('next');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -6,18 +7,25 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.prepare()
-  .then(() => {
-    const server = express();
+const createServer = () => {
+  const server = express();
+  server.use(compression());
+  server.get('*', (req, res) => handle(req, res));
+  return server;
+};
 
-    server.get('*', (req, res) => {
-      return handle(req, res);
-    });
+const server = createServer();
 
-    server.listen(port, (err) => {
-      if (err) throw err;
-      console.log(`> Ready on http://localhost:${port}`);
-    });
-  });
+// if (!process.env.LAMBDA) {
+//   app.prepare()
+//     .then(() => {
+//       server.listen(port, (err) => {
+//         if (err) throw err;
+//         // eslint-disable-next-line
+//         console.log(`> Ready on http://localhost:${port}`);
+//       });
+//     });
+// }
 
-module.exports = app;
+exports.app = app;
+exports.server = server;

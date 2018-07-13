@@ -26,6 +26,7 @@
     "serverless": "^1.28.0"
   },
   "dependencies": {
+    "compression": "^1.7.2",
     "express": "^4.16.3",
     "next": "^6.1.1",
     "react": "^16.4.1",
