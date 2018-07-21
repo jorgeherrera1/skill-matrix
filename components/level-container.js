@@ -11,6 +11,7 @@ export default () => (
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 20px;
         justify-items: start;
+        height: calc(100vh - 200px);
       }
     `}</style>
   </div>
