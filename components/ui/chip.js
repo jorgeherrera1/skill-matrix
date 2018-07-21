@@ -14,17 +14,20 @@ export default ({text}) => (
         height: var(--chip-height);
         line-height: var(--chip-height);
         cursor: pointer;
+        margin: 2px 0;
       }
 
       .remove {
-        display: inline-block;
-        font-size: 13px;
         border: 0;
         height: 16px;
         width: 16px;
         border-radius: 50%;
-        margin: 4px -8px 0 8px;
         cursor: pointer;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0 0 0 10px;
+        overflow: hidden;
       }
 
       .remove:after {

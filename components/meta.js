@@ -7,16 +7,18 @@ export default () => (
       <meta charSet="utf-8" />
     </Head>
     <style jsx global>{`
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+
       :root {
-        --color-primary: #016bb5;
-        --color-primary-light: #5699e8;
-        --color-primary-dark: #004185;
+        --color-primary: #1a237e;
+        --color-primary-light: #534bae;
+        --color-primary-dark: #000051;
 
-        --color-secondary: #848484;
-        --color-secondary-light: #b4b4b4;
-        --color-secondary-dark: #575757;
+        --color-secondary: #424242;
+        --color-secondary-light: #6d6d6d;
+        --color-secondary-dark: #1b1b1b;
 
-        --text-color-primary: #000000;
+        --text-color-primary: #ffffff;
         --text-color-secondary: #ffffff;
 
         --background-color: var(--color-secondary-dark);
@@ -25,8 +27,10 @@ export default () => (
 
       html, body {
         height: 100%;
+        font-size: 14px;
         box-sizing: border-box;
         background: var(--background-color);
+        font-family: 'Montserrat', sans-serif;
       }
       
       *, *:before, *:after {
@@ -34,7 +38,6 @@ export default () => (
       }
 
       body {
-        font: 10px Arial;
         color: var(--text-color-primary);
         margin: 0;
         padding: 0;

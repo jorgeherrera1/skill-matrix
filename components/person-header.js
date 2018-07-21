@@ -7,7 +7,7 @@ export default () => (
       header {
         height: 100px;
         padding: 15px;
-        background: #848484;
+        background: var(--surface-color);
         border-radius: 2px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
       }
