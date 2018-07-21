@@ -1,4 +1,5 @@
-import Page from '../layouts/main';
+import Page from '../layouts/page'
+import MainContent from '../layouts/main-content';
 import LevelContainer from '../components/level-container';
 
 export default () => (
@@ -6,8 +7,8 @@ export default () => (
     <header>
       <h1>JavaScript</h1>
     </header>
-    <main>
+    <MainContent>
       <LevelContainer />
-    </main>
+    </MainContent>
   </Page>
 );

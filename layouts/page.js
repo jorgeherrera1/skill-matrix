@@ -5,6 +5,14 @@ export default ({children}) => (
   <div>
     <Meta />
     <AppHeader />
-    {children}
+    <div className="page-content">
+      {children}
+    </div>
+    <style jsx>{`
+      .page-content {
+        padding: 10px;
+      }
+    `}
+    </style>
   </div>
 );

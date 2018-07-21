@@ -1,8 +1,10 @@
+import SkillContainer from './skill-container';
+
 export default () => (
   <div className="level-container">
-    <div>jr</div>
-    <div>int</div>
-    <div>sr</div>
+    <SkillContainer level="Junior" />
+    <SkillContainer level="Intermediate" />
+    <SkillContainer level="Senior" />
     <style jsx>{`
       .level-container {
         display: grid;
