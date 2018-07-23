@@ -16,16 +16,15 @@ const createServer = () => {
 
 const server = createServer();
 
-// if (!process.env.LAMBDA) {
-//   app.prepare()
-//     .then(() => {
-//       server.listen(port, (err) => {
-//         if (err) throw err;
-//         // eslint-disable-next-line
-//         console.log(`> Ready on http://localhost:${port}`);
-//       });
-//     });
-// }
+if (dev) {
+  app.prepare()
+    .then(() => {
+      server.listen(port, (err) => {
+        if (err) throw err;
+        console.log(`> Ready on http://localhost:${port}`);
+      });
+    });
+}
 
 exports.app = app;
 exports.server = server;
